@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>101 CONSEILS – Facturation Électronique (diagnostic & accompagnement)</title>
+<meta name="description" content="Facturation électronique : obligations, calendrier, schéma PPF/PDP/OD, diagnostic interactif, rôle de l’expert-comptable, FAQ, glossaire, contact, et assistant IA.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --primary:#0b6bff; --accent:#f59e0b; --ok:#16a34a; --bad:#ef4444;
+    --deep:#0f172a; --muted:#64748b; --bg:#f8fafc; --card:#fff;
+    --shadow:0 10px 25px rgba(15,23,42,.08); --radius:18px; --container:1180px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--deep)}
+  a{color:var(--primary);text-decoration:none}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 20px}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow)}
+  h1,h2,h3{margin:0 0 10px}
+  p.lead{color:var(--muted)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:#ffffffcc;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e5e7eb}
+  .nav{max-width:var(--container);margin:0 auto;display:flex;align-items:center;gap:20px;padding:12px 20px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+  .brand .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#6aa6ff);display:grid;place-items:center;color:#fff;font-weight:900}
+  .nav a{font-weight:600;color:var(--deep);opacity:.9}
+  .nav a:hover{opacity:1}
+  .cta{margin-left:auto;display:flex;align-items:center;gap:18px;font-weight:700}
+  .cta .contact-item{display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .cta .icon{font-size:18px;line-height:1}
+  .btn{display:inline-block;background:var(--primary);color:#fff;padding:12px 16px;border-radius:12px;font-weight:800}
+  .btn.secondary{background:#111827}
+
+  /* Hero */
+  .hero{padding:36px 0}
+  .hero .card{padding:26px}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+  .badge{font-size:12px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#1d4ed8;border:1px solid #c7d2fe}
+
+  /* Timeline */
+  .timeline{padding:18px}
+  .frise{display:grid;gap:16px}
+  .step{background:#fff;border-radius:14px;padding:18px;border-left:10px solid var(--primary);box-shadow:var(--shadow)}
+  .step:nth-child(2){border-color:#22c55e}
+  .step:nth-child(3){border-color:#f59e0b}
+  .step small{color:var(--muted)}
+  .date{font-weight:900}
+
+  /* Infographie */
+  .schema{padding:18px}
+  .schema img{width:100%;height:auto;border-radius:14px;box-shadow:var(--shadow)}
+  .schema figcaption{font-size:14px;color:var(--muted);margin-top:6px;text-align:center}
+
+  /* Rôle / expertise */
+  .grid3{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#ecfeff;color:#0369a1;border:1px solid #bae6fd;font-size:12px;margin-bottom:6px}
+
+  /* Diagnostic – Résultat compact */
+  .result{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start;padding:18px}
+  .radar-wrap{background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:10px}
+  #radar{width:100%;height:260px}
+  .summary{display:grid;gap:12px}
+  .badge-score{display:flex;align-items:center;gap:10px;background:#f1f5ff;border:1px solid #dbeafe;padding:10px 12px;border-radius:12px;font-weight:800}
+  .badge-score .emoji{font-size:26px;line-height:1}
+  .kpis{display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px;font-size:14px}
+  .good{color:#166534;background:#dcfce7;border-color:#bbf7d0}
+  .risk{color:#92400e;background:#fef3c7;border-color:#fde68a}
+  .bad{color:#991b1b;background:#fee2e2;border-color:#fecaca}
+  .actions-list{margin:0;padding-left:18px}
+  .actions-list li{margin:4px 0}
+  .cta-mini{display:inline-block;margin-top:6px;background:var(--primary);color:#fff;padding:8px 12px;border-radius:10px;font-weight:800;text-decoration:none}
+
+  /* FAQ / Glossaire / Contact */
+  .grid2{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .accordion summary{cursor:pointer;font-weight:800}
+  .search{display:flex;gap:8px;margin:10px 0 0}
+  .search input{flex:1;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .contact form input,.contact form textarea{width:100%;padding:12px;border:1px solid #e5e7eb;border-radius:12px}
+
+  @media(max-width:980px){
+    .grid3{grid-template-columns:1fr}
+    .grid2{grid-template-columns:1fr}
+    .result{grid-template-columns:1fr}
+    .contact{grid-template-columns:1fr}
+  }
+
+  /* === Chat IA === */
+  #ai-bubble{
+    position:fixed;right:40px;bottom:40px;width:90px;height:90px;border-radius:50%;background:#fff;
+    display:flex;justify-content:center;align-items:center;cursor:pointer;border:1px solid #e5e7eb;
+    box-shadow:0 12px 24px rgba(0,0,0,.15);z-index:9999;transition:transform .15s ease
+  }
+  #ai-bubble:hover{transform:scale(1.06)}
+  #ai-bubble img{width:72px;height:auto;border-radius:50%}
+  #ai-panel{
+    position:fixed;right:40px;bottom:140px;width:400px;max-height:72vh;background:#fff;border-radius:16px;border:1px solid #e5e7eb;
+    box-shadow:0 18px 40px rgba(15,23,42,.22);display:none;flex-direction:column;overflow:hidden;z-index:10000
+  }
+  #ai-head{padding:10px 14px;font-weight:900;border-bottom:1px solid #e5e7eb;background:#f9fafb;display:flex;justify-content:space-between;align-items:center}
+  #ai-full{font-size:18px;background:#f1f5f9;border:1px solid #e5e7eb;border-radius:10px;padding:4px 8px;cursor:pointer}
+  #ai-log{flex:1;padding:12px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+  .msg{padding:10px 12px;border-radius:12px;max-width:85%}
+  .me{align-self:flex-end;background:#eef2ff}
+  .bot{align-self:flex-start;background:#f8fafc}
+  #ai-form{display:flex;gap:6px;padding:10px;border-top:1px solid #e5e7eb}
+  #ai-in{flex:1;border:1px solid #e5e7eb;border-radius:10px;padding:10px}
+  #ai-send{background:#0b6bff;color:#fff;border:none;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer}
+  #ai-panel.full{right:5vw;bottom:6vh;width:820px;max-width:92vw;height:80vh}
+  #ai-panel.full #ai-log{height:calc(80vh - 110px)}
+  @media(max-width:640px){#ai-panel{right:10px;left:10px;width:auto}}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="nav">
+    <div class="brand"><div class="logo">101</div><span>CONSEILS</span></div>
+    <a href="#intro">Présentation</a>
+    <a href="#comprendre">Comprendre</a>
+    <a href="#role">Rôle de l'EC</a>
+    <a href="#diagnostic">Diagnostic</a>
+    <a href="#faq">FAQ</a>
+    <a href="#glossaire">Glossaire</a>
+    <div class="cta">
+      <div class="contact-item"><span class="icon">📞</span><a href="tel:+33756911011">07 56 91 10 11</a></div>
+      <div class="contact-item"><span class="icon">✉️</span><a href="mailto:contact@101conseils.com">contact@101conseils.com</a></div>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <!-- HERO -->
+  <section id="intro" class="hero">
+    <div class="card" style="padding:26px">
+      <h1>Facturation électronique : contrainte ou opportunité ?</h1>
+      <p class="lead">La réforme impose l’échange de <strong>factures structurées</strong> via <strong>PPF / PDP / OD</strong>, pour fiabiliser la TVA et automatiser les flux. Réception obligatoire le <strong>01/09/2026</strong> ; émission généralisée le <strong>01/09/2027</strong>. Ici : obligations, process clair, calendrier, ce qu’il faut faire <em>maintenant</em> — et comment votre expert-comptable vous accompagne.</p>
+      <div class="badges">
+        <span class="badge">Accompagnement clé en main</span>
+        <span class="badge">PPF / PDP / OD / e-reporting</span>
+        <span class="badge">Diagnostic gratuit</span>
+      </div>
+      <div><a class="btn" href="#diagnostic">Lancer mon diagnostic</a> <a class="btn secondary" href="#contact">Être rappelé</a></div>
+    </div>
+  </section>
+
+  <!-- CALENDRIER -->
+  <section class="timeline card">
+    <h2>Calendrier de la réforme</h2>
+    <p class="lead">Les échéances clés pour organiser votre feuille de route.</p>
+    <div class="frise">
+      <div class="step">
+        <small>Réception obligatoire (toutes tailles)</small>
+        <div class="date">1<sup>er</sup> septembre 2026</div>
+        <p>Être capable de <strong>recevoir</strong> des e-factures via <strong>PPF</strong>, <strong>PDP</strong> ou <strong>OD</strong>. <em>Action :</em> choisir un canal et le tester avec 2–3 fournisseurs.</p>
+      </div>
+      <div class="step">
+        <small>Émission : Grandes + ETI</small>
+        <div class="date">1<sup>er</sup> septembre 2026</div>
+        <p><strong>Émettre</strong> en format structuré : paramétrer la PDP/OD, vérifier les mentions obligatoires et l’e-reporting.</p>
+      </div>
+      <div class="step">
+        <small>Émission : PME + TPE</small>
+        <div class="date">1<sup>er</sup> septembre 2027</div>
+        <p>Généralisation de l’émission. <em>Action :</em> finaliser les procédures, former l’équipe, sécuriser l’archivage probant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPRENDRE – SCHÉMA -->
+  <section id="comprendre" class="schema card" style="margin-top:16px">
+    <h2>Comment circulent les e-factures</h2>
+    <p class="lead">Process complet : Vendeur → PDP/OD → PPF → PDP/OD → Acheteur, avec transmission à l’Administration (e-reporting). L’expert-comptable suit le cadrage, la TVA, l’intégration comptable et l’archivage.</p>
+    <figure>
+      <img src="Schema-en-Y-Dematerialisation-Factures.png" alt="Schéma PPF/PDP/OD – 101 CONSEILS" onerror="this.style.display='none';document.getElementById('schema-fallback').style.display='block';">
+      <div id="schema-fallback" style="display:none;padding:10px;text-align:center;color:#991b1b">Schéma indisponible (vérifiez le fichier <strong>Schema-en-Y-Dematerialisation-Factures.png</strong> à la racine).</div>
+      <figcaption>L’expert-comptable 101 CONSEILS vous accompagne : <em>cadrage, contrôles TVA, intégration comptable, archivage probant</em>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- RÔLE / EXPERTISE -->
+  <section id="role" class="card" style="margin-top:16px;padding:18px">
+    <h2>Le rôle de l’expert-comptable</h2>
+    <p class="lead">Au-delà de l’outil, nous sécurisons vos flux et votre cash. Notre accompagnement comprend :</p>
+    <div class="grid3">
+      <div class="card" style="padding:14px">
+        <span class="pill">Cadrage</span>
+        <h3>Feuille de route & gouvernance</h3>
+        <p>Diagnostic initial, vagues (réception → émission → optimisation), jalons & indicateurs (statuts, rejets, DSO).</p>
+      </div>
+      <div class="card" style="padding:14px">
+        <span class="pill">Outillage</span>
+        <h3>Choix PDP / OD / PPF</h3>
+        <p>Benchmark, POC, paramétrage annuaire/routage, intégrations ERP/Compta, Factur-X/UBL.</p>
+      </div>
+      <div class="card" style="padding:14px">
+        <span class="pill">TVA</span>
+        <h3>Conformité & e-reporting</h3>
+        <p>Règles de taux/territorialité, contrôles automatiques, fiabilisation des données transmises.</p>
+      </div>
+      <div class="card" style="padding:14px">
+        <span class="pill">Process</span>
+        <h3>Qualité & contrôles</h3>
+        <p>Émission/réception, rapprochements, rejets/litiges, procédures écrites.</p>
+      </div>
+      <div class="card" style="padding:14px">
+        <span class="pill">Sécurité</span>
+        <h3>Archivage probant</h3>
+        <p>Conservation légale, intégrité/horodatage, sauvegardes & test de restauration, PCA.</p>
+      </div>
+      <div class="card" style="padding:14px">
+        <span class="pill">Cash</span>
+        <h3>Pilotage & relances</h3>
+        <p>Relances, tableaux de bord (DSO, retards), coordination ADV/Commerce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTIC -->
+  <section id="diagnostic" style="margin-top:16px">
+    <h2>Diagnostic interactif : êtes-vous prêt ?</h2>
+    <p class="lead">Cochez simplement les réponses. Le <strong>radar</strong> montre les risques ; nous affichons un <strong>score</strong> avec <strong>smiley</strong>, vos <strong>points forts/faibles</strong> et les <strong>actions prioritaires</strong>.</p>
+
+    <div class="grid2">
+      <!-- FORM -->
+      <form id="diagForm" class="card" style="padding:12px">
+        <fieldset>
+          <legend>1) Émission</legend>
+          <div class="q"><label>1. Logiciel de facturation (pas Excel) ?</label><div class="options"><label><input type="radio" name="emit_tool" value="yes" required> Oui</label><label><input type="radio" name="emit_tool" value="no"> Non</label></div></div>
+          <div class="q"><label>2. Mentions obligatoires toujours présentes ?</label><div class="options"><label><input type="radio" name="emit_fields" value="yes" required> Oui</label><label><input type="radio" name="emit_fields" value="no"> Non</label></div></div>
+          <div class="q"><label>3. Encore majoritairement PDF par e-mail ?</label><div class="options"><label><input type="radio" name="emit_pdfonly" value="yes" required> Oui</label><label><input type="radio" name="emit_pdfonly" value="no"> Non</label></div></div>
+          <div class="q"><label>4. Automatisation de l’émission (1→5)</label><div class="options"><select name="emit_auto" required><option value="" hidden>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) Réception & validation</legend>
+          <div class="q"><label>5. Encore papier/PDF image ?</label><div class="options"><label><input type="radio" name="recv_paper" value="yes" required> Oui</label><label><input type="radio" name="recv_paper" value="no"> Non</label></div></div>
+          <div class="q"><label>6. Circuit de validation clair ?</label><div class="options"><label><input type="radio" name="recv_flow" value="yes" required> Oui</label><label><input type="radio" name="recv_flow" value="no"> Non</label></div></div>
+          <div class="q"><label>7. Rapprochement 3-voies automatisé ?</label><div class="options"><label><input type="radio" name="recv_match" value="yes" required> Oui</label><label><input type="radio" name="recv_match" value="no"> Non</label></div></div>
+          <div class="q"><label>8. Intégration comptable (1→5)</label><div class="options"><select name="recv_book" required><option value="" hidden>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3) TVA & données</legend>
+          <div class="q"><label>9. e-reporting automatique ?</label><div class="options"><label><input type="radio" name="tva_report" value="yes" required> Oui</label><label><input type="radio" name="tva_report" value="no"> Non</label></div></div>
+          <div class="q"><label>10. Contrôles TVA/mentions avant envoi ?</label><div class="options"><label><input type="radio" name="tva_checks" value="yes" required> Oui</label><label><input type="radio" name="tva_checks" value="no"> Non</label></div></div>
+          <div class="q"><label>11. Fréquence des contrôles (1→5)</label><div class="options"><select name="tva_ctrl" required><option value="" hidden>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+          <div class="q"><label>12. Annuaire (SIREN/SIRET) à jour ?</label><div class="options"><label><input type="radio" name="tva_registry" value="yes" required> Oui</label><label><input type="radio" name="tva_registry" value="no"> Non</label></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4) Organisation</legend>
+          <div class="q"><label>13. Référent “facturation électronique” ?</label><div class="options"><label><input type="radio" name="org_owner" value="yes" required> Oui</label><label><input type="radio" name="org_owner" value="no"> Non</label></div></div>
+          <div class="q"><label>14. Formation courte des équipes ?</label><div class="options"><label><input type="radio" name="org_train" value="yes" required> Oui</label><label><input type="radio" name="org_train" value="no"> Non</label></div></div>
+          <div class="q"><label>15. Modes opératoires écrits/partagés ?</label><div class="options"><label><input type="radio" name="org_docs" value="yes" required> Oui</label><label><input type="radio" name="org_docs" value="no"> Non</label></div></div>
+          <div class="q"><label>16. Relances & suivi paiements (1→5)</label><div class="options"><select name="org_dso" required><option value="" hidden>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>5) Sécurité & archivage</legend>
+          <div class="q"><label>17. Stockage sécurisé + sauvegarde ?</label><div class="options"><label><input type="radio" name="sec_store" value="yes" required> Oui</label><label><input type="radio" name="sec_store" value="no"> Non</label></div></div>
+          <div class="q"><label>18. Archivage probant (intégrité/horodatage) ?</label><div class="options"><label><input type="radio" name="sec_archive" value="yes" required> Oui</label><label><input type="radio" name="sec_archive" value="no"> Non</label></div></div>
+          <div class="q"><label>19. Fréquence des sauvegardes (1→5)</label><div class="options"><select name="sec_backup" required><option value="" hidden>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+          <div class="q"><label>20. Test de restauration déjà réalisé ?</label><div class="options"><label><input type="radio" name="sec_restore" value="yes" required> Oui</label><label><input type="radio" name="sec_restore" value="no"> Non</label></div></div>
+        </fieldset>
+
+        <button class="btn" type="submit">Calculer mon résultat</button>
+      </form>
+
+      <!-- RESULTAT -->
+      <div class="card result">
+        <div class="radar-wrap"><canvas id="radar"></canvas></div>
+        <div class="summary">
+          <div class="badge-score" id="scoreBadge"><span class="emoji">🙂</span><span class="text">Résultat en attente…</span></div>
+          <div class="kpis">
+            <div class="kpi" id="kpi-Emission">Emission — …</div>
+            <div class="kpi" id="kpi-Réception">Réception — …</div>
+            <div class="kpi" id="kpi-TVA">TVA — …</div>
+            <div class="kpi" id="kpi-Organisation">Organisation — …</div>
+            <div class="kpi" id="kpi-Sécurité">Sécurité — …</div>
+          </div>
+          <div id="strengths"></div>
+          <div id="weaknesses"></div>
+          <div id="actionsBlock"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="card" style="margin-top:16px;padding:18px">
+    <h2>FAQ – questions fréquentes</h2>
+    <div class="search"><input id="faqSearch" type="search" placeholder="Rechercher dans la FAQ…"></div>
+    <div id="faqList" style="display:grid;gap:10px;margin-top:12px">
+      <details class="accordion"><summary>La facturation électronique, concrètement ?</summary><p>Émission, transmission et réception de factures <strong>structurées</strong> (Factur-X/UBL/CII) via des plateformes reliées au PPF. Le PDF simple par e-mail ne suffit plus pour l’émission.</p></details>
+      <details class="accordion"><summary>Différence e-invoicing / e-reporting ?</summary><p>e-invoicing : B2B domestique (factures structurées). e-reporting : transmission de <strong>données</strong> (B2C, export, international, paiements).</p></details>
+      <details class="accordion"><summary>PPF, PDP, OD : quel choix ?</summary><p>PPF si besoins simples. PDP pour contrôles/portails/intégrations. OD pour conversion & interfaçage. Nous réalisons un benchmark et un POC.</p></details>
+      <details class="accordion"><summary>Mon logiciel est-il compatible ?</summary><p>Vérifier l’export Factur-X/UBL, la connexion PPF/PDP/OD et les statuts. Nous testons avec 2–3 partenaires.</p></details>
+      <details class="accordion"><summary>Quelles priorités pour une TPE ?</summary><p>Activer la <strong>réception</strong>, fiabiliser les <strong>données</strong>, écrire un <strong>process simple</strong> ; l’émission suit.</p></details>
+      <details class="accordion"><summary>Impacts TVA ?</summary><p>Traçabilité renforcée, contrôle des taux/mentions, e-reporting fiable. Moins d’erreurs et de pénalités.</p></details>
+      <details class="accordion"><summary>Faut-il une signature électronique ?</summary><p>Pas systématiquement : l’authenticité/intégrité sont assurées par le circuit plateforme + archivage probant.</p></details>
+      <details class="accordion"><summary>Que faire en cas de rejet ?</summary><p>Identifier la cause (mention manquante, TVA, annuaire), corriger et <strong>réémettre</strong>. Prévoir une procédure standard.</p></details>
+      <details class="accordion"><summary>Conservation des factures ?</summary><p>Jusqu’à 10 ans selon les règles. <strong>Archivage probant</strong> requis (intégrité/horodatage).</p></details>
+      <details class="accordion"><summary>Panne de plateforme ?</summary><p>Prévoir un <strong>PCA</strong> : solution de secours (OD/PPF), sauvegardes et processus temporaires.</p></details>
+    </div>
+  </section>
+
+  <!-- GLOSSAIRE -->
+  <section id="glossaire" class="card" style="margin-top:16px;padding:18px">
+    <h2>Glossaire utile</h2>
+    <div class="grid2">
+      <div class="card" style="padding:12px"><h3>PPF</h3><p>Portail Public de Facturation : annuaire & collecte des données.</p></div>
+      <div class="card" style="padding:12px"><h3>PDP</h3><p>Plateforme de Dématérialisation Partenaire : achemine/contrôle les factures, connectée au PPF.</p></div>
+      <div class="card" style="padding:12px"><h3>OD</h3><p>Opérateur de Dématérialisation : conversion & interfaçage entre votre SI et plateformes.</p></div>
+      <div class="card" style="padding:12px"><h3>Factur-X / UBL / CII</h3><p>Formats structurés de facture électronique.</p></div>
+      <div class="card" style="padding:12px"><h3>Adresse de routage</h3><p>Coordonnée technique qui oriente la facture vers la bonne plateforme.</p></div>
+      <div class="card" style="padding:12px"><h3>Archivage probant</h3><p>Conservation avec intégrité/horodatage et lisibilité durable.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact" style="margin-top:16px">
+    <div class="card" style="padding:18px">
+      <h2>Aller plus loin : parlons de votre feuille de route</h2>
+      <p class="lead">Quel que soit votre point de départ (Excel, PDF, ERP), nous cadrons : outils, gouvernance, paramétrage, formation et suivi.</p>
+    </div>
+    <form class="card" style="padding:18px" onsubmit="event.preventDefault();alert('Merci ! Nous revenons vers vous rapidement.');this.reset();">
+      <h3>Formulaire de contact</h3>
+      <div class="grid2">
+        <label>Nom<br><input required></label>
+        <label>Entreprise<br><input></label>
+      </div>
+      <div class="grid2">
+        <label>Email<br><input type="email" required></label>
+        <label>Téléphone<br><input type="tel"></label>
+      </div>
+      <label>Message<br><textarea rows="6" required></textarea></label>
+      <div style="margin-top:8px"><button class="btn" type="submit">Envoyer</button></div>
+    </form>
+  </section>
+</main>
+
+<footer style="margin-top:28px;padding:24px 0;background:#0b1220;color:#cbd5e1">
+  <div class="wrap"><p><strong>101 CONSEILS</strong> – Expertise comptable & transformation numérique. Informations générales ; vérifiez les mises à jour officielles. Pour un audit personnalisé, <a href="#contact">contactez-nous</a>.</p></div>
+</footer>
+
+<!-- === Script DIAGNOSTIC (radar + résumé) === -->
+<script>
+  const ctx = document.getElementById('radar');
+  let radarChart = null;
+  const vYes = v=> v==='yes';
+  const scoreYesNo = v => vYes(v) ? 100 : 20;
+  const scoreInvertedYesNo = v => vYes(v) ? 30 : 100;
+  const scoreScale = n => (parseInt(n,10)-1)*25;
+
+  function computeScores(f){
+    const emission = [scoreYesNo(f.emit_tool.value),scoreYesNo(f.emit_fields.value),scoreInvertedYesNo(f.emit_pdfonly.value),scoreScale(f.emit_auto.value)];
+    const reception = [scoreInvertedYesNo(f.recv_paper.value),scoreYesNo(f.recv_flow.value),scoreYesNo(f.recv_match.value),scoreScale(f.recv_book.value)];
+    const tva = [scoreYesNo(f.tva_report.value),scoreYesNo(f.tva_checks.value),scoreScale(f.tva_ctrl.value),scoreYesNo(f.tva_registry.value)];
+    const org = [scoreYesNo(f.org_owner.value),scoreYesNo(f.org_train.value),scoreYesNo(f.org_docs.value),scoreScale(f.org_dso.value)];
+    const sec = [scoreYesNo(f.sec_store.value),scoreYesNo(f.sec_archive.value),scoreScale(f.sec_backup.value),scoreYesNo(f.sec_restore.value)];
+    const avg = arr=> Math.round(arr.reduce((a,b)=>a+b,0)/arr.length);
+    return { Emission:avg(emission), Réception:avg(reception), TVA:avg(tva), Organisation:avg(org), Sécurité:avg(sec) };
+  }
+  function emojiFor(score){ if(score>=80) return '🟢 😃'; if(score>=60) return '🟡 🙂'; if(score>=40) return '🟠 😕'; return '🔴 😟';}
+  function kpiClass(score){ if(score>=75) return 'kpi good'; if(score>=50) return 'kpi risk'; return 'kpi bad'; }
+
+  const actionByArea = {
+    'Emission': ["Choisir/valider une PDP ou un OD compatible Factur-X/UBL","Mettre en place les contrôles des mentions obligatoires"],
+    'Réception': ["Activer la réception via PPF/PDP/OD et tester avec 2–3 fournisseurs","Structurer un circuit de validation simple"],
+    'TVA': ["Automatiser e-reporting et contrôles des taux/mentions","Revoir la territorialité et l’auto-liquidation si concerné"],
+    'Organisation': ["Nommer un référent « facturation électronique »","Former les personnes clés & documenter les modes opératoires"],
+    'Sécurité': ["Mettre en place/valider l’archivage probant","Planifier des sauvegardes + test de restauration"],
+  };
+
+  function renderSummary(scores){
+    const global = Math.round(Object.values(scores).reduce((a,b)=>a+b,0)/5);
+    const badge = document.getElementById('scoreBadge');
+    badge.querySelector('.emoji').textContent = emojiFor(global).split(' ')[1] || '🙂';
+    badge.querySelector('.text').textContent = `Score global : ${global}/100`;
+
+    for(const [area,val] of Object.entries(scores)){
+      const el = document.getElementById('kpi-'+area);
+      if(el){ el.className = kpiClass(val); el.textContent = `${area} — ${val}/100`; }
+    }
+    const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+    const strengths = sorted.filter(([_,v])=>v>=75).slice(0,3).map(([k])=>k);
+    const weaknesses = sorted.reverse().filter(([_,v])=>v<60).slice(0,3).map(([k])=>k);
+
+    document.getElementById('strengths').innerHTML =
+      strengths.length ? `<div class="kpi good"><strong>✅ Points forts :</strong> ${strengths.join(' · ')}</div>`
+                       : `<div class="kpi"><strong>Points forts :</strong> à consolider</div>`;
+
+    document.getElementById('weaknesses').innerHTML =
+      weaknesses.length ? `<div class="kpi bad"><strong>⚠️ Points faibles :</strong> ${weaknesses.join(' · ')}</div>`
+                        : `<div class="kpi"><strong>Points faibles :</strong> aucun majeur détecté</div>`;
+
+    const worstTwo = Object.entries(scores).sort((a,b)=>a[1]-b[1]).slice(0,2).map(([k])=>k);
+    const actions = worstTwo.flatMap(k=>actionByArea[k]||[]);
+    document.getElementById('actionsBlock').innerHTML =
+      `<div class="kpi risk">
+        <strong>🛠️ Actions prioritaires :</strong>
+        <ul class="actions-list">${actions.map(a=>`<li>${a}</li>`).join('')}</ul>
+        <a class="cta-mini" href="#contact">Contacter 101 CONSEILS</a>
+      </div>`;
+    return global;
+  }
+
+  function drawRadar(scores){
+    const labels = Object.keys(scores);
+    const data = Object.values(scores);
+    if(radarChart){radarChart.destroy();}
+    radarChart = new Chart(ctx,{
+      type:'radar',
+      data:{labels,datasets:[{label:'0 = risque élevé, 100 = maîtrisé',data,fill:true,borderWidth:2,pointRadius:3}]},
+      options:{responsive:true,maintainAspectRatio:false,scales:{r:{beginAtZero:true,min:0,max:100,ticks:{stepSize:20}}},plugins:{legend:{display:false}},elements:{line:{tension:0.2}}}
+    });
+  }
+
+  document.getElementById('diagForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const scores = computeScores(e.target);
+    drawRadar(scores);
+    renderSummary(scores);
+    document.querySelector('.result').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  // FAQ search
+  function filterList(inputId, containerId){
+    const term = document.getElementById(inputId).value.toLowerCase();
+    document.querySelectorAll(`#${containerId} > details`).forEach(el=>{
+      const txt = el.textContent.toLowerCase();
+      el.style.display = txt.includes(term) ? '' : 'none';
+    })
+  }
+  const faqS=document.getElementById('faqSearch'); if(faqS) faqS.addEventListener('input', ()=>filterList('faqSearch','faqList'));
+</script>
+
+<!-- === Chat IA intégré (sans fichier externe) === -->
+<div id="ai-bubble" title="Assistant 101 CONSEILS">
+  <img src="images/robot-101.png" alt="Assistant 101 CONSEILS" onerror="this.replaceWith(document.createTextNode('🤖'))">
+</div>
+
+<div id="ai-panel" role="dialog" aria-label="Assistant facturation électronique">
+  <div id="ai-head">
+    <span>Assistant 101 CONSEILS – Facturation électronique</span>
+    <button id="ai-full" title="Agrandir / Réduire">↗</button>
+  </div>
+  <div id="ai-log">
+    <div class="msg bot">Bonjour 👋 Posez vos questions (PPF, PDP/OD, e-reporting, calendrier, TVA…).</div>
+  </div>
+  <form id="ai-form">
+    <input id="ai-in" placeholder="Posez votre question…" autocomplete="off"/>
+    <button id="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>
+(() => {
+  const bubble = document.getElementById('ai-bubble');
+  const panel  = document.getElementById('ai-panel');
+  const form   = document.getElementById('ai-form');
+  const input  = document.getElementById('ai-in');
+  const log    = document.getElementById('ai-log');
+  const fullBtn= document.getElementById('ai-full');
+  if(!bubble||!panel||!form||!input||!log) return;
+
+  const isOpen = () => window.getComputedStyle(panel).display !== 'none';
+  bubble.addEventListener('click', () => { panel.style.display = isOpen()? 'none' : 'flex'; });
+  if (fullBtn) fullBtn.addEventListener('click', ()=> panel.classList.toggle('full'));
+
+  function add(role, text){
+    const div = document.createElement('div');
+    div.className = 'msg ' + (role==='user'?'me':'bot');
+    div.textContent = text;
+    log.appendChild(div); log.scrollTop = log.scrollHeight;
+    return div;
+  }
+  function collapseText(text, limit=600){
+    if(!text || text.length<=limit) return {short:text,long:null};
+    return {short:text.slice(0,limit).trim()+'…', long:text};
+  }
+  function addCollapsibleMessage(container, text){
+    const {short,long} = collapseText(text,600);
+    if(!long){ container.textContent = short; return; }
+    const span=document.createElement('span'); span.textContent = short+' ';
+    const toggle=document.createElement('button');
+    toggle.textContent='Voir plus';
+    toggle.style.cssText='background:none;border:none;color:#0b6bff;cursor:pointer;padding:0;';
+    let expanded=false;
+    toggle.onclick=()=>{ expanded=!expanded; span.textContent=(expanded?long:short)+' '; toggle.textContent=expanded?'Voir moins':'Voir plus';};
+    container.innerHTML=''; container.appendChild(span); container.appendChild(toggle);
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const q = (input.value||'').trim(); if(!q) return;
+    add('user', q); input.value='';
+    const thinking = add('bot','…');
+    try{
+      const res = await fetch('/.netlify/functions/ai-chat',{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})
+      });
+      if(!res.ok){ thinking.textContent='Erreur serveur : '+(await res.text()); return; }
+      const data = await res.json();
+      addCollapsibleMessage(thinking, data?.answer || "Je n'ai pas trouvé la réponse.");
+    }catch(err){ thinking.textContent="Désolé, une erreur est survenue."; }
+  });
+
+  input.addEventListener('keydown',(e)=>{ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); form.requestSubmit(); }});
+})();
+</script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  (function () {
+    var hasToken = /invite_token=|recovery_token=|confirmation_token=/.test(location.hash);
+    function init() {
+      if (hasToken && window.netlifyIdentity) {
+        netlifyIdentity.on('init', function () { netlifyIdentity.open(); });
+        netlifyIdentity.init();
+      } else if (window.netlifyIdentity) {
+        netlifyIdentity.init();
+      }
+    }
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      init();
+    } else {
+      document.addEventListener('DOMContentLoaded', init);
+    }
+  })();
+</script>
+</body>
+</html>

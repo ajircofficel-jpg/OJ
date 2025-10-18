@@ -1,0 +1,12 @@
+{
+  "header": "### 101 CONSEILS : Expertise comptabilité, Conseil, Audit\n📞 **07 56 91 10 11** · ✉️ **contact@101conseils.com**",
+  "hero": "# Facturation électronique : contrainte ou opportunité ?\nLa réforme impose l’échange de **factures structurées** via **PPF / PDP / OD**.\n\n- **Réception obligatoire : 01/09/2026**\n- **Émission généralisée : 01/09/2027**\n\n[➡️ Lancer mon diagnostic](#diagnostic) · [Être rappelé](#contact)",
+  "calendrier": "## Calendrier de la réforme\n- 01/09/2026 : Réception obligatoire (toutes tailles)\n- 01/09/2026 : Émission grandes + ETI\n- 01/09/2027 : Émission PME + TPE\n\n> _Dates indicatives – à vérifier selon décrets._",
+  "schema": "## Comment circulent les e-factures\n![Schéma](./Images/Schema-en-Y-Dematerialisation-Factures.png)\n\n**Flux :** Vendeur → PDP/OD → PPF → PDP/OD → Acheteur (+ e-reporting vers Administration).",
+  "role_ec": "## Le rôle de l’expert-comptable\nNous cadrons la **feuille de route**, choisissons/configurons **PPF/PDP/OD**, sécurisons la **TVA**, **intégrons** à la compta/ERP, mettons des **procédures** et **formons** vos équipes. \n\n> Objectif : conformité + efficacité + cash (relances/DSO) + archivage probant.",
+  "diagnostic_intro": "## Diagnostic express\nQuelques questions **fermées**, un **radar** de risques, puis une synthèse : **points forts**, **points faibles**, **actions** et **accompagnement 101 CONSEILS**.",
+  "faq": "## FAQ\n**E-invoicing vs e-reporting ?**\n- E-invoicing : B2B domestique (facture structurée)\n- E-reporting : envoi de **données** (B2C, export, international)\n\n**PPF, PDP, OD ?**\n- **PPF** : portail public\n- **PDP** : plateforme partenaire\n- **OD** : opérateur (conversion / interfaces)",
+  "glossaire": "## Glossaire\n- **PPF** : Portail Public de Facturation\n- **PDP** : Plateforme de Dématérialisation Partenaire\n- **OD** : Opérateur de Dématérialisation\n- **Factur-X / UBL / CII** : formats structurés",
+  "contact": "## Contact\n**101 CONSEILS** – Parlons de votre feuille de route.\n\n- 📞 07 56 91 10 11  \n- ✉️ contact@101conseils.com  \n\n[👉 Demander un rappel](#)",
+  "footer": "© 101 CONSEILS – Expertise comptable & transformation numérique."
+}

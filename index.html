@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>101 CONSEILS – Facturation électronique, diagnostic & accompagnement</title>
+
+  <!-- Styles très légers pour une mise en page propre (tu peux remplacer par ton CSS/Tailwind) -->
+  <style>
+    :root{--c1:#0f172a;--c2:#1e293b;--c3:#2563eb;--c4:#f1f5f9}
+    *{box-sizing:border-box} body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    header,section,footer{max-width:1100px;margin:0 auto;padding:28px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .muted{color:#64748b}
+    .btn{display:inline-block;background:var(--c3);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .grid{display:grid;gap:24px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))} @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px}
+    .hero{padding-top:24px;padding-bottom:0}
+    header.topbar{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    header.topbar .brand{display:flex;gap:12px;align-items:center}
+    header.topbar img.logo{width:40px;height:40px;border-radius:10px}
+    header.topbar nav a{color:#0f172a;text-decoration:none;margin:0 10px;font-weight:600}
+    header.topbar .cta{margin-left:20px}
+    .footer{border-top:1px solid #e2e8f0;color:#475569}
+    .center{text-align:center}
+    .figure{display:flex;justify-content:center;margin:16px 0}
+    .figure img{max-width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:700}
+    .list-clean{padding-left:18px;margin:12px 0}
+  </style>
+</head>
+<body>
+
+  <!-- ====== EN-TÊTE ====== -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="/logo-101.png" alt="101 CONSEILS" class="logo" />
+      <strong>101 CONSEILS</strong>
+    </div>
+    <nav>
+      <a href="#intro">Présentation</a>
+      <a href="#schema">Comprendre</a>
+      <a href="#role">Rôle de l'EC</a>
+      <a href="#diagnostic">Diagnostic</a>
+      <a href="#faq">FAQ</a>
+      <a href="#glossaire">Glossaire</a>
+      <a href="#contact" class="btn cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Bandeau coordonnées injecté par CMS -->
+  <div class="container">
+    <div id="cms-header" class="card muted">
+      <!-- Fallback statique si le CMS n'est pas chargé -->
+      <strong>101 CONSEILS</strong> – Expertise comptable, Conseil, Audit • 📞 07 56 91 10 11 • ✉️ contact@101conseils.com
+    </div>
+  </div>
+
+  <!-- ====== HÉRO ====== -->
+  <section id="intro" class="hero">
+    <div id="cms-hero" class="card">
+      <!-- Fallback -->
+      <h1>Facturation électronique : contrainte ou opportunité ?</h1>
+      <p class="muted">
+        La réforme impose l’échange de <strong>factures structurées</strong> via <strong>PPF / PDP / OD</strong>.
+        Réception obligatoire <strong>01/09/2026</strong> ; émission généralisée <strong>01/09/2027</strong>.
+      </p>
+      <p>
+        <a class="btn" href="#diagnostic">Lancer mon diagnostic</a>
+        <a class="btn" href="#contact" style="background:#0f172a">Être rappelé</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== CALENDRIER ====== -->
+  <section id="calendrier">
+    <div id="cms-calendrier" class="card">
+      <!-- Fallback -->
+      <h2>Calendrier de la réforme</h2>
+      <ul class="list-clean">
+        <li><strong>01/09/2026</strong> : Réception obligatoire (toutes tailles)</li>
+        <li><strong>01/09/2026</strong> : Émission Grandes + ETI</li>
+        <li><strong>01/09/2027</strong> : Émission PME + TPE</li>
+      </ul>
+      <p class="muted">Dates indicatives – mettez à jour si l’État publie de nouveaux décrets.</p>
+    </div>
+  </section>
+
+  <!-- ====== SCHÉMA ====== -->
+  <section id="schema">
+    <div id="cms-schema" class="card">
+      <!-- Fallback -->
+      <h2>Comment circulent les e-factures</h2>
+      <div class="figure">
+        <img src="/Images/Schema-en-Y-Dematerialisation-Factures.png"
+             alt="Schéma PPF / PDP / OD – 101 CONSEILS" />
+      </div>
+      <p class="muted">
+        Flux : Vendeur → PDP/OD → PPF → PDP/OD → Acheteur (+ e-reporting vers Administration).
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== RÔLE EC ====== -->
+  <section id="role">
+    <div id="cms-role-ec" class="card">
+      <!-- Fallback -->
+      <h2>Le rôle de l’expert-comptable</h2>
+      <ul class="list-clean">
+        <li>Cadrage de la feuille de route & gouvernance</li>
+        <li>Choix et paramétrage du canal (PPF/PDP/OD), annuaire et routage</li>
+        <li>Contrôles TVA, e-reporting, conformité</li>
+        <li>Intégration comptable/ERP, procédures & contrôles</li>
+        <li>Formation & accompagnement, archivage probant</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== DIAGNOSTIC ====== -->
+  <section id="diagnostic">
+    <div id="cms-diagnostic-intro" class="card">
+      <!-- Fallback -->
+      <h2>Diagnostic express</h2>
+      <p>
+        Répondez à quelques questions <strong>fermées</strong>. Vous obtenez un
+        <strong>radar de risques</strong>, vos <strong>points forts/faibles</strong>,
+        et les <strong>actions prioritaires</strong>. Nous pouvons ensuite
+        vous accompagner pour exécuter la feuille de route.
+      </p>
+      <p><a class="btn" href="#contact">Démarrer et être rappelé</a></p>
+    </div>
+
+    <!-- Ici, conserve ton formulaire + radar si tu en as déjà un -->
+    <!-- Exemple d’ancre pour intégrer plus tard ton widget existant -->
+    <div class="card">
+      <span class="tag">À intégrer</span>
+      <p class="muted">Formulaire + radar (ton code existant) peuvent rester ici.</p>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section id="faq">
+    <div id="cms-faq" class="card">
+      <!-- Fallback -->
+      <h2>FAQ</h2>
+      <p><strong>E-invoicing vs e-reporting ?</strong><br/>
+        E-invoicing : facture structurée B2B domestique.<br/>
+        E-reporting : envoi de <em>données</em> (B2C, export, international).
+      </p>
+      <p><strong>PPF, PDP, OD ?</strong><br/>
+        PPF = portail public, PDP = plateforme partenaire, OD = opérateur (conversion / interfaces).
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== GLOSSAIRE ====== -->
+  <section id="glossaire">
+    <div id="cms-glossaire" class="card">
+      <!-- Fallback -->
+      <h2>Glossaire</h2>
+      <ul class="list-clean">
+        <li><strong>PPF</strong> : Portail Public de Facturation</li>
+        <li><strong>PDP</strong> : Plateforme de Dématérialisation Partenaire</li>
+        <li><strong>OD</strong> : Opérateur de Dématérialisation</li>
+        <li><strong>Factur-X / UBL / CII</strong> : formats structurés</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact">
+    <div id="cms-contact" class="card">
+      <!-- Fallback -->
+      <h2>Contact</h2>
+      <p><strong>101 CONSEILS</strong> – Parlons de votre feuille de route facturation électronique.</p>
+      <p>📞 <a href="tel:+33756911011">07 56 91 10 11</a><br/>
+         ✉️ <a href="mailto:contact@101conseils.com">contact@101conseils.com</a></p>
+      <p><a class="btn" href="mailto:contact@101conseils.com?subject=Rappel%20facturation%20électronique">Demander un rappel</a></p>
+    </div>
+  </section>
+
+  <!-- ====== PIED DE PAGE ====== -->
+  <footer class="footer">
+    <div id="cms-footer" class="container center">
+      <!-- Fallback -->
+      © 101 CONSEILS – Expertise comptable & transformation numérique.
+    </div>
+  </footer>
+
+  <!-- ====== Chat IA (si tu l’utilises) ======
+       Décommente si tu as /ai-widget.js dans le projet
+  <script defer src="/ai-widget.js"></script>
+  -->
+
+  <!-- Charge le convertisseur Markdown (Marked) + binding CMS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="/cms-bind.js"></script>
+</body>
+</html>

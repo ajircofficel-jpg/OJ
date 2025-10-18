@@ -1,6 +1,0 @@
-[build]
-  publish = "."
-  command = ""
-
-[[plugins]]
-  package = "@netlify/plugin-identity-core"
